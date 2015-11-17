@@ -5,15 +5,18 @@ import android.provider.BaseColumns;
 
 public class FriendsContract {
     interface FriendsColumns {
+        String FRIENDS_ID = "_id";
         String FRIENDS_NAME = "friends_name";
         String FRIENDS_EMAIL = "friends_email";
         String FRIENDS_PHONE = "friends_phone";
     }
 
-    private static final String CONTENT_AUTHORITY = "com.example.anku.friends.provider";
-    private static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+    public static final String CONTENT_AUTHORITY = "com.example.anku.friends.provider";
+    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
     public static final String PATH_FRIENDS = "friends";
+    public static final Uri URI_TABLE = Uri.parse(BASE_CONTENT_URI.toString() + "/" + PATH_FRIENDS);
+
 
     public static final String[] TOP_LEVEL_PATHS={
             PATH_FRIENDS
