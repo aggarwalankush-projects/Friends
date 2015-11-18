@@ -28,7 +28,7 @@ public class FriendsDatabase extends SQLiteOpenHelper {
                 + BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + FriendsContract.FriendsColumns.FRIENDS_NAME + " TEXT NOT NULL,"
                 + FriendsContract.FriendsColumns.FRIENDS_EMAIL + " TEXT NOT NULL,"
-                + FriendsContract.FriendsColumns.FRIENDS_PHONE + " TEXT NOT NULL,)");
+                + FriendsContract.FriendsColumns.FRIENDS_PHONE + " TEXT NOT NULL)");
     }
 
     @Override

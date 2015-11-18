@@ -10,7 +10,7 @@ import java.util.List;
 
 public class FriendsListFragment extends ListFragment implements LoaderManager.LoaderCallbacks<List<Friend>> {
 
-    private FriendsCustomAdaptor adaptor;
+    private FriendsCustomAdapter adapter;
     private static final int LOADER_ID = 1;
     private ContentResolver contentResolver;
     private List<Friend> friends;
@@ -21,9 +21,9 @@ public class FriendsListFragment extends ListFragment implements LoaderManager.L
         super.onActivityCreated(savedInstanceState);
         setHasOptionsMenu(true);
         contentResolver=getActivity().getContentResolver();
-        adaptor = new FriendsCustomAdaptor(getActivity(), getChildFragmentManager());
+        adapter = new FriendsCustomAdapter(getActivity(), getChildFragmentManager());
         setEmptyText("No Friends");
-        setListAdapter(adaptor);
+        setListAdapter(adapter);
         setListShown(false);
         getLoaderManager().initLoader(LOADER_ID, null, this);
     }
@@ -36,7 +36,7 @@ public class FriendsListFragment extends ListFragment implements LoaderManager.L
 
     @Override
     public void onLoadFinished(Loader<List<Friend>> loader, List<Friend> friends) {
-        adaptor.setData(friends);
+        adapter.setData(friends);
         this.friends=friends;
         if(isResumed())
             setListShown(true);
@@ -46,6 +46,6 @@ public class FriendsListFragment extends ListFragment implements LoaderManager.L
 
     @Override
     public void onLoaderReset(Loader<List<Friend>> loader) {
-        adaptor.setData(null);
+        adapter.setData(null);
     }
 }

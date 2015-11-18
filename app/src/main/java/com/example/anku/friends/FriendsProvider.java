@@ -102,7 +102,7 @@ public class FriendsProvider extends ContentProvider {
         final SQLiteDatabase db = openHelper.getWritableDatabase();
         final int match = URI_MATCHER.match(uri);
 
-        if (uri.equals(FriendsContract.BASE_CONTENT_URI)) {
+        if (uri.equals(FriendsContract.URI_TABLE)) {
             deleteDatabase();
             return 0;
         }

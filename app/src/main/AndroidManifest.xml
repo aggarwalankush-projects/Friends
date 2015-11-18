@@ -21,6 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/add_friend_title"/>
+        <activity android:name=".EditActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/edit_friend_title"/>
+        <activity android:name=".SearchActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/search_friend_title"/>
         <provider
             android:name="com.example.anku.friends.FriendsProvider"
             android:authorities="com.example.anku.friends.provider"
